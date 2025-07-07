@@ -4,27 +4,18 @@ A complete Node.js + Express.js + MongoDB backend project for tracking daily nut
 
 ### Features Implemented
 
--  **User Authentication**
-  - Secure registration and login with JWT
-  - Passwords hashed using bcrypt
-
--  **Profile Management**
-  - Set and update target calories, protein, carbs, fat, and water
-
--  **Food Diary**
-  - Add food entries with meal type and quantity
-  - Fetch all logged entries per user
-
--  **Water Tracking**
-  - Log water intake by quantity and date
-  - Retrieve all water logs for a user
-
--  **Weight Tracking**
-  - Log body weight for specific dates
-  - Fetch historical weight data
-
--  **Dashboard**
-  - Aggregated view of total nutrients and logs for a given day
+| Category          | Feature                  | Description                                                                 |
+|-------------------|--------------------------|-----------------------------------------------------------------------------|
+| **Authentication** | User Registration & Login | Secure registration and login with JWT, passwords hashed using bcrypt       |
+| **Profile Management** | Set Targets       | Update target calories, protein, carbs, fat, and water intake goals        |
+| **Food Diary**     | Add Food Entries         | Log food with meal type (breakfast/lunch/dinner/snack) and quantity        |
+|                   | View Food Logs           | Fetch all logged food entries with nutritional breakdown per user           |
+| **Water Tracking** | Log Water Intake         | Record daily water consumption by quantity and date                        |
+|                   | View Water History       | Retrieve all water logs for a user with date filters                       |
+| **Weight Tracking**| Log Body Weight          | Track weight measurements for specific dates                               |
+|                   | View Weight Progress     | Fetch historical weight data with chronological visualization              |
+| **Dashboard**      | Daily Summary            | Aggregated view of total nutrients, water, and weight for selected date    |
+ 
 
 
 ### Tech Stack
@@ -85,3 +76,41 @@ A complete Node.js + Express.js + MongoDB backend project for tracking daily nut
 11. Dashboard Summary
 ![dashboard](img/image-10.png)
 *Displays a daily summary of total calories, macros, water, and weight from all logs*
+
+## Project Structure
+```
+macro-tracker/
+│
+├── controllers/          
+│   ├── authController.js
+│   ├── diaryController.js
+│   ├── waterController.js
+│   └── weightController.js
+│
+├── models/              
+│   ├── User.js
+│   ├── Food.js
+│   ├── DiaryEntry.js
+│   ├── WaterLog.js
+│   └── WeightLog.js
+│
+├── routes/          
+│   ├── auth.js
+│   ├── diary.js
+│   ├── food.js
+│   ├── profile.js
+│   ├── water.js
+│   └── weight.js
+│
+├── middleware/           
+│   └── authMiddleware.js
+│
+├── config/            
+│   └── db.js
+│
+├── .env                 
+├── .gitignore
+├── package.json
+├── server.js            
+└── README.md            
+```
