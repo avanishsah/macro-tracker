@@ -9,7 +9,7 @@ router.post('/', auth, async (req, res) => {
     const { food, quantity, meal_type, log_date } = req.body;
 
     const entry = new DiaryEntry({
-      user: req.user.id,  // comes from JWT
+      user: req.user.id,  // from JWT
       food,
       quantity,
       meal_type,
